@@ -12,6 +12,7 @@ pool:
 variables:
   LT_USERNAME: 'varunkumarb'
   LT_ACCESS_KEY: 'GhGShOYHz1jODWE9qDvkJK4nPDR3n2lc0gNp9VknalhwtUineG'
+  LT_BUILD_NAME: 'Junit-Selenium-JAVA'
 
 steps:
 - task: Maven@3
