@@ -12,7 +12,6 @@ pool:
 variables:
   LT_USERNAME: 'varunkumarb'
   LT_ACCESS_KEY: 'GhGShOYHz1jODWE9qDvkJK4nPDR3n2lc0gNp9VknalhwtUineG'
-  LT_BUILD_NAME: 'doLbtRzYpxbPBtphNU'
 
 steps:
 - task: Maven@3
