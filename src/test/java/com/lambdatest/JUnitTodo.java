@@ -17,6 +17,7 @@ public class JUnitTodo {
      String username = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
      String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
      public static RemoteWebDriver driver = null;
+     String Build = System.getenv("LT_BUILD_NAME");
 
     /*
     Steps to run Smart UI project (https://beta-smartui.lambdatest.com/)
@@ -36,7 +37,7 @@ public class JUnitTodo {
         browserOptions.setCapability("browserVersion", "latest");
 
         Map<String, Object> ltOptions = new HashMap<>();
-        ltOptions.put("build", "JUnitSampleTestApp");
+        ltOptions.put("build", Build);
         ltOptions.put("name", "JUnitSampleTest");
         ltOptions.put("selenium_version", "4.0.0");
         // ltOptions.put("project", "");  //Enter Project name here
