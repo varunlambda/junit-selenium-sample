@@ -14,7 +14,14 @@ variables:
   LT_ACCESS_KEY: 'GhGShOYHz1jODWE9qDvkJK4nPDR3n2lc0gNp9VknalhwtUineG'
   LT_BUILD_NAME: 'Junit-Selenium-JAVA'
 
+
 steps:
+
+- task: configuration@1
+  inputs:
+    connection: 'tunnelVarun'
+    isTunnelActivate: true
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -26,3 +33,5 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 - task: LambdatestResults@1
+
+- task: stoptunnel@1
