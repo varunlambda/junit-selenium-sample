@@ -14,7 +14,7 @@ pool:
 
 variables:
   LT_USERNAME: 'varunkumarb'
-  LT_ACCESS_KEY: 'GhGShOYHz1jODWE9qDvkJK4nPDR3n2lc0gNp9VknalhwtUineG'
+  LT_ACCESS_KEY: 'LT_KKkSe0kYnq4nzjNBLJmk0c1HSo1PUWtH7exYP8zVemT6dyw'
   LT_BUILD_NAME: 'Azure_testng_demo'
 
 # Maven
@@ -22,8 +22,10 @@ steps:
 - task: configuration@1
   inputs:
     connection: 'tunnelVarun'
-    tunnelOptions: '{"verbose": true, "logfile": "a.log", "loglevel": "debug"}'
     isTunnelActivate: true
+    tunnelOptions: '{"verbose": true, "logfile": "a.log", "loglevel": "debug"}'
+    isAppAutomate: false
+    isSmartUI: false
 
 - script: |
     echo Executing curl upload...
