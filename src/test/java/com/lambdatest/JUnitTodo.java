@@ -51,7 +51,7 @@ public class JUnitTodo {
         browserOptions.setCapability("LT:Options", ltOptions);
 
         try {
-            System.out.println(usernamr + ":" + accessKey);
+            System.out.println(username + ":" + accessKey);
             driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + gridURL), browserOptions);
         } catch (MalformedURLException e) {
             System.out.println("Invalid grid URL");
