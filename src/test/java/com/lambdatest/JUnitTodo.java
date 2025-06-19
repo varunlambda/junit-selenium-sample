@@ -14,8 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JUnitTodo {
-     String username = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
-     String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
+     String username = System.getenv("LT_USERNAME") == null ? "varunkumarb" : System.getenv("LT_USERNAME");
+     String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_KKkSe0kYnq4nzjNBLJmk0c1HSo1PUWtH7exYP8zVemT6dyw" : System.getenv("LT_ACCESS_KEY");
      public static RemoteWebDriver driver = null;
      String Build = System.getenv("LT_BUILD_NAME");
 
