@@ -4,34 +4,46 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+  branches:
+    include:
+      - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
+
 
 variables:
   LT_USERNAME: 'varunkumarb'
   LT_ACCESS_KEY: 'GhGShOYHz1jODWE9qDvkJK4nPDR3n2lc0gNp9VknalhwtUineG'
-  LT_BUILD_NAME: 'Junit-Selenium-JAVA'
+  LT_BUILD_NAME: 'Azure_testng_demo'
 
-
+# Maven
 steps:
-
 - task: configuration@1
   inputs:
     connection: 'tunnelVarun'
+    tunnelOptions: '{"verbose": true, "logfile": "a.log", "loglevel": "debug"}'
     isTunnelActivate: true
 
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+- script: |
+    echo Executing curl upload...
+    curl -vvv lambdatest.com
+  displayName: 'Checking accessibility of the application'
+
+- script: mvn test -P single
+  displayName: 'Run Tests'
+
 - task: LambdatestResults@1
 
 - task: stoptunnel@1
+
+- script: |
+   copy a.log $(Build.ArtifactStagingDirectory)\a.log
+  displayName: 'Command Line Script'
+  condition: always()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  continueOnError: true
+  condition: always()
+  retryCountOnTaskFailure: 1
