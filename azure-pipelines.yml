@@ -21,7 +21,7 @@ steps:
   inputs:
     connection: 'tunnelVarun'
     isTunnelActivate: true
-    tunnelOptions: '{"verbose": true, "logfile": "a.log", "log-level": "debug"}'
+    tunnelOptions: '{"verbose": true, "logfile": "a.log", "loglevel": "debug"}'
     isAppAutomate: false
     isSmartUI: false
 
