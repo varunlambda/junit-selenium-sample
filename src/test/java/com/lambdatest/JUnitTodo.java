@@ -45,6 +45,7 @@ public class JUnitTodo {
         // ltOptions.put("project", "");  //Enter Project name here
         // ltOptions.put("smartUI.project", "");  //Enter smartUI Project name here
         ltOptions.put("w3c", true);
+        ltOptions.put("tunnel", true);
         ltOptions.put("plugin", "junit-junit");
         // ltOptions.put("visual", true);  // To enable step by step screenshot
         // ltOptions.put("network", true);  // To enable network logs
